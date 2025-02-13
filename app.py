@@ -7,8 +7,15 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+
+
 # Get API key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+headers = {
+    "authorization" : st.secrets["GEMINI_API_KEY"],
+    "content-type" : "application/json"
+}
 
 # Set page config
 st.set_page_config(page_title="Image Analyzer", page_icon="📸", layout="centered")
